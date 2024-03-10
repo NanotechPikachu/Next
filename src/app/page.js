@@ -27,7 +27,7 @@ export default function Page() {
           <p> A DataBase of all animes. </p>
         </Card>
         <Card title="Tested" className="mt-4" icon={true}>
-          <p> The package's been tested to make sure that errors in JSON are minimized. </p>
+          <p> The package&apos;s been tested to make sure that errors in JSON are minimized. </p>
         </Card>
       </div>
     </div>
