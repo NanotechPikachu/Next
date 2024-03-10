@@ -4,6 +4,6 @@
 
 @layer base {
   body {
-    @apply bg-gradient-to-r from-cyan-500/20 to-cyan-400/10 backdrop-blur-sm text-base;
+    @apply bg-gradient-to-r from-cyan-500/20 to-cyan-400/10 text-base;
   }
 }
