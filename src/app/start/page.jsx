@@ -1,6 +1,6 @@
 import Terminal from '../../components/Terminal.jsx';
 import Code from '../../components/Code.js';
-//import { NextCard, PrevCard } from '../components/PageCards.js';
+import { NextCard, PrevCard } from '../../components/PageCards.js';
 
 export default function Start() {
   return (
@@ -14,10 +14,8 @@ export default function Start() {
     <li key="func1"> <Code code="getAnime()" className="text-sm" /> - To get an anime from it’s title. </li>
     <li key="func2" className="mt-2"> <Code code="searchAnime()" className="text-sm" /> - To search for similar animes. </li>
     </ul>
-{/*
     <NextCard title="hi" link="/" className="mt-20" />
     <PrevCard title="Home" link="/" className="mt-3 mb-10" />
-*/}
     </div>
   )
 }
