@@ -1,12 +1,14 @@
+'use client'
+
 import Card from '../components/Card.js';
 import TitleNavBar from '../components/TitleNavBar.js';
 import GitButton from '../components/GitButton.js';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 export default function Page() {
   let navigate = useRouter();
 
-  function prevPage() {
+  function pageFlip() {
     navigate.push('/start');
   };
 
@@ -21,7 +23,7 @@ export default function Page() {
         <div className="flex md:justify-start md:items-center md:w-auto ml-6">
           <button 
           className="bg-blue-500 hover:bg-blue-400 text-white mt-10 rounded-full text-center py-2 px-4 mr-[72px] md:mr-8"
-          
+         onClick={pageFlip} 
           >
           Get started
           </button>
