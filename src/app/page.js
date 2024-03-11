@@ -22,7 +22,7 @@ export default function Page() {
         </div>
         <div className="flex md:justify-start md:items-center md:w-auto ml-6">
           <button 
-          className="bg-blue-500 hover:bg-blue-400 text-white mt-10 rounded-full text-center py-2 px-4 mr-[72px] md:mr-8"
+          className="bg-blue-500 hover:bg-blue-400 text-white mt-10 rounded-full text-center py-2 px-4 mr-[70px] md:mr-8"
          onClick={pageFlip} 
           >
           Get started
