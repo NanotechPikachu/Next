@@ -1,6 +1,6 @@
-import Terminal from '../components/Terminal';
-import Code from '../components/Code';
-//import { NextCard, PrevCard } from '../components/PageCards';
+import Terminal from '../../components/Terminal.js';
+import Code from '../../components/Code.js';
+//import { NextCard, PrevCard } from '../components/PageCards.js';
 
 export default function Start() {
   return (
