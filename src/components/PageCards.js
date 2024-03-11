@@ -1,4 +1,6 @@
-import { useRouter } from 'next/router';
+'use client'
+
+import { useRouter } from 'next/navigation';
 
 export function NextCard({ link, title, className }) {
   let navigate = useRouter();
