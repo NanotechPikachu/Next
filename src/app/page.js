@@ -1,8 +1,15 @@
 import Card from '../components/Card.js';
 import TitleNavBar from '../components/TitleNavBar.js';
 import GitButton from '../components/GitButton.js';
+import { useRouter } from 'next/router';
 
 export default function Page() {
+  let navigate = useRouter();
+
+  function prevPage() {
+    navigate.push('/start');
+  };
+
   return (
     <div>
       <TitleNavBar />
