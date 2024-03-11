@@ -1,5 +1,6 @@
-import { ClipboardIcon } from '@heroicons/react/24/outline';
+use client;
 
+import { ClipboardIcon } from '@heroicons/react/24/outline';
 
 export default function Terminal({ command }) {
   return (
