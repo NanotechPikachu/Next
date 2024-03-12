@@ -3,6 +3,7 @@ import { NextCard, PrevCard } from '../../components/PageCards.js';
 import { SyntaxHighlighter as CodeBlock, style } from '../../components/CodeBlock.js';
 import Copy from '../../components/Copy.js';
 import TitleNavBar from '../../components/TitleNavBar.js';
+import { Note } from '../../components/Boxes.jsx';
 
 export default function Result() {
   const c = `{
