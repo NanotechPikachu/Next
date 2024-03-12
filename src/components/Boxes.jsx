@@ -1,5 +1,7 @@
-export function Alert() {
+export function Note() {
   return (
-    <span>Hi</span>
+    <div className="bg-blue-600/80">
+    
+    </div>
   )
 }
