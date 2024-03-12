@@ -7,7 +7,7 @@ export function Note({ title="Note", children }) {
     </svg>
     <p className="ml-2 text-neutral-100/90 text-bold">{title}</p>
     </div>
-    <p pl-4 pb-4 text-white>{children}</p> 
+    <p ml-4 mb-4 text-white>{children}</p> 
     </div>
   )
 }
