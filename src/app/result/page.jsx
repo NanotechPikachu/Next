@@ -124,7 +124,7 @@ The promise consists of an <a href="https://developer.mozilla.org/en-US/docs/Web
     </CodeBlock>
     </div>
     <Note>
-    Hi
+This function will return upto 10 Array elements AKA index 0-9. Though it depends on the search parameter as well as the ratio parameter.
     </Note>
     </div>
   )
