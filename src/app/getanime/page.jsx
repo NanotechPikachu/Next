@@ -6,6 +6,19 @@ import TitleNavBar from '../../components/TitleNavBar.js';
 import { Note } from '../../components/Boxes.jsx';
 
 export default function GetAnime() {
+  const a = `const { getAnime } = require(\'anichu.db\');
+
+( async () => {
+  const res = await getAnime(\'sword art online\');
+  console.log(res);
+})();`;
+
+  const b = `const anidb = require(\'anichu.db\');
+
+( async () => {
+  const res = await anidb.anime.get(\'sword art online \');
+  console.log(res);
+})();`;
 
   return (
     <div>
@@ -23,6 +36,23 @@ export default function GetAnime() {
     <hr />
     <h3 className="ml-4 mr-4 mt-6 text-xl md:text-2xl text-black font-bold">Usage</h3>
     <p className="ml-4 mr-4 mt-4 text-black font-bold text-lg">1st Method:</p>
+    <div className="bg-black mt-4 ml-5 mr-5 rounded-lg">
+    <div className="flex justify-end items-center bg-black ml-5 h-7 mr-5 mb-0 rounded-lg"> 
+    <Copy command={a} />
+    </div>
+    <CodeBlock language="javascript" style={style} showLineNumbers={true} wrapLines={true}>
+    {a}
+    </CodeBlock>
+    </div>
+    <p className="ml-4 mr-4 mt-4 text-black font-bold text-lg">2nd Method:</p>
+    <div className="bg-black mt-4 ml-5 mr-5 rounded-lg">
+    <div className="flex justify-end items-center bg-black ml-5 h-7 mr-5 mb-0 rounded-lg"> 
+    <Copy command={b} />
+    </div>
+    <CodeBlock language="javascript" style={style} showLineNumbers={true} wrapLines={true}>
+    {b}
+    </CodeBlock>
+    </div>
     </div>
   )
 }
