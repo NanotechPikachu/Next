@@ -15,10 +15,13 @@ export default function GetAnime() {
     This function is used to get a specific anime from the JSON DB which will be supplied as it’s parameter.
     </p>
     <hr />
-    <h3 className="ml-4 mr-4 text-xl md:text-2xl text-black font-bold">Parameters</h3>
+    <h3 className="ml-4 mr-4 mt-6 text-xl md:text-2xl text-black font-bold">Parameters</h3>
     <ul className="mt-4 ml-8 list-disc mr-8 text-lg text-black">
     <li key="anName"><b> animeName </b></li>
     </ul>
+    <p className="ml-4 mr-4 mt-6 mb-4 text-black">This parameter is to give the anime name to search for in DB.</p>
+    <hr />
+    <h3 className="ml-4 mr-4 mt-6 text-xl md:text-2xl text-black font-bold">Usage</h3>
     </div>
   )
 }
