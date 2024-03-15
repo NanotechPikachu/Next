@@ -11,9 +11,11 @@ export default function GetAnime() {
     <div>
     <h1 className="ml-4 text-3xl md:text-4xl pt-24 mb-4 font-bold text-black">get Anime()</h1>
     <hr />
-    <p className="ml-5 mr-5 mt-4 text-black">
-    This page deals with the JSON DB output as well as discussing the results or outputs of functions.
+    <p className="ml-5 mr-5 mt-4 text-black mb-4">
+    This function is used to get a specific anime from the JSON DB which will be supplied as it’s parameter.
     </p>
+    <hr />
+    <h3 className="ml-4 mr-4 text-xl md:text-2xl text-black font-bold">Parameters</h3>
     </div>
   )
 }
