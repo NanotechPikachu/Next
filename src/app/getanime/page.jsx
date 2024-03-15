@@ -3,7 +3,7 @@ import { NextCard, PrevCard } from '../../components/PageCards.js';
 import { SyntaxHighlighter as CodeBlock, style } from '../../components/CodeBlock.js';
 import Copy from '../../components/Copy.js';
 import TitleNavBar from '../../components/TitleNavBar.js';
-import { Note } from '../../components/Boxes.jsx';
+import { Note, Warning } from '../../components/Boxes.jsx';
 
 export default function GetAnime() {
   const a = `const { getAnime } = require(\'anichu.db\');
@@ -53,6 +53,9 @@ export default function GetAnime() {
     {b}
     </CodeBlock>
     </div>
+    <Warning>
+This function returns a Promise with an Object inside it. This Object consists of all data regards to the anime.
+    </Warning>
     </div>
   )
 }
