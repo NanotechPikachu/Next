@@ -22,6 +22,7 @@ export default function GetAnime() {
     <p className="ml-4 mr-4 mt-6 mb-4 text-black">This parameter is to give the anime name to search for in DB.</p>
     <hr />
     <h3 className="ml-4 mr-4 mt-6 text-xl md:text-2xl text-black font-bold">Usage</h3>
+    <p className="ml-4 mr-4 mt-4 text-black font-bold text-lg">1st Method:</p>
     </div>
   )
 }
