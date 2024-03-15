@@ -16,6 +16,9 @@ export default function GetAnime() {
     </p>
     <hr />
     <h3 className="ml-4 mr-4 text-xl md:text-2xl text-black font-bold">Parameters</h3>
+    <ul className="mt-4 ml-8 list-disc mr-8 text-lg text-black">
+    <li key="anName"><b> animeName </b></li>
+    </ul>
     </div>
   )
 }
