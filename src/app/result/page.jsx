@@ -81,7 +81,7 @@ The promise consists of an <a href="https://developer.mozilla.org/en-US/docs/Web
     Data Structure of <Code code="getAnime()" className="text-lg" />
     </h3>
     <div className="bg-black mt-4 ml-5 mr-5 rounded-lg">
-    <div className="flex justify-end items-center bg-black ml-5 h-7 mr-5 mb-0 rounded-lg"> 
+    <div className="flex justify-end items-center bg-black ml-5 h-7 mb-0 rounded-lg"> 
     <Copy command={c} />
     </div>
     <CodeBlock language="json" style={style} showLineNumbers={true} wrapLines={true}>
@@ -90,7 +90,7 @@ The promise consists of an <a href="https://developer.mozilla.org/en-US/docs/Web
     </div>
     <p className="mt-4 ml-4 mr-4">This function’s output can be accessed as such:</p>
     <div className="bg-black mt-4 ml-5 mr-5 rounded-lg">
-    <div className="flex justify-end items-center bg-black ml-5 h-7 mr-5 mb-0 rounded-lg"> 
+    <div className="flex justify-end items-center bg-black ml-5 h-7 mb-0 rounded-lg"> 
     <Copy command={b} />
     </div>
     <CodeBlock language="javascript" style={style} showLineNumbers={true} wrapLines={true}>
@@ -107,7 +107,7 @@ The promise consists of an <a href="https://developer.mozilla.org/en-US/docs/Web
     Data Structure of <Code code="searchAnime()" className="text-lg" />
     </h3>
     <div className="bg-black mt-4 ml-5 mr-5 rounded-lg">
-    <div className="flex justify-end items-center bg-black ml-5 h-7 mr-5 mb-0 rounded-lg"> 
+    <div className="flex justify-end items-center bg-black ml-5 h-7 mb-0 rounded-lg"> 
     <Copy command={a} />
     </div>
     <CodeBlock language="json" style={style} showLineNumbers={true} wrapLines={true}>
@@ -116,7 +116,7 @@ The promise consists of an <a href="https://developer.mozilla.org/en-US/docs/Web
     </div>
     <p className="mt-4 ml-4 mr-4">This function’s output can be accessed as such:</p>
     <div className="bg-black mt-4 ml-5 mr-5 rounded-lg">
-    <div className="flex justify-end items-center bg-black ml-5 h-7 mr-5 mb-0 rounded-lg"> 
+    <div className="flex justify-end items-center bg-black ml-5 h-7 mb-0 rounded-lg"> 
     <Copy command={d} />
     </div>
     <CodeBlock language="javascript" style={style} showLineNumbers={true} wrapLines={true}>
