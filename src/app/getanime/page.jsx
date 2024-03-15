@@ -37,7 +37,7 @@ export default function GetAnime() {
     <h3 className="ml-4 mr-4 mt-6 text-xl md:text-2xl text-black font-bold">Usage</h3>
     <p className="ml-4 mr-4 mt-4 text-black font-bold text-lg">1st Method:</p>
     <div className="bg-black mt-4 ml-5 mr-5 rounded-lg">
-    <div className="flex justify-end items-center bg-black ml-5 h-7 mr-5 mb-0 rounded-lg"> 
+    <div className="flex justify-end items-center bg-black ml-5 h-7 mb-0 rounded-lg"> 
     <Copy command={a} />
     </div>
     <CodeBlock language="javascript" style={style} showLineNumbers={true} wrapLines={true}>
@@ -46,7 +46,7 @@ export default function GetAnime() {
     </div>
     <p className="ml-4 mr-4 mt-4 text-black font-bold text-lg">2nd Method:</p>
     <div className="bg-black mt-4 ml-5 mr-5 rounded-lg">
-    <div className="flex justify-end items-center bg-black ml-5 h-7 mr-5 mb-0 rounded-lg"> 
+    <div className="flex justify-end items-center bg-black ml-5 h-7 mb-0 rounded-lg"> 
     <Copy command={b} />
     </div>
     <CodeBlock language="javascript" style={style} showLineNumbers={true} wrapLines={true}>
