@@ -4,7 +4,6 @@ import { SyntaxHighlighter as CodeBlock, style } from '../../components/CodeBloc
 import Copy from '../../components/Copy.js';
 import TitleNavBar from '../../components/TitleNavBar.js';
 import { Note, Warning } from '../../components/Boxes.jsx';
-import { Link } from 'next/link';
 
 export default function GetAnime() {
   const a = `const { getAnime } = require(\'anichu.db\');
@@ -55,7 +54,7 @@ export default function GetAnime() {
     </CodeBlock>
     </div>
     <Warning>
-This function returns a <Link href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" className="text-blue-600 hover:text-blue-700">Promise</Link> with an <Link href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" className="text-blue-600 hover:text-blue-700">Object</Link>inside it. This Object consists of all data regards to the anime.
+This function returns a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" className="text-blue-600 hover:text-blue-700"><u>Promise</u></a> with an <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" className="text-blue-600 hover:text-blue-700"><u>Object</u></a>inside it. This Object consists of all data regards to the anime.
     </Warning>
     </div>
   )
