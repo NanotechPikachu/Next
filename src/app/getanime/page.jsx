@@ -61,7 +61,7 @@ This function returns a <a href="https://developer.mozilla.org/en-US/docs/Web/Ja
 Refer the <Link href="/result" className="text-blue-600 hover:text-blue-700"><u>Result Data</u></Link> to see how the JSON DB output looks like.
     </Note>
     <NextCard title="Home" link="/" className="mt-20" />
-    <PrevCard title="Get Started" link="/result" className="mt-3 mb-10" />
+    <PrevCard title="Result Type" link="/result" className="mt-3 mb-10" />
     </div>
   )
 }
