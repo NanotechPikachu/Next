@@ -6,7 +6,7 @@ import TitleNavBar from '../../components/TitleNavBar.js';
 import { Note, Warning } from '../../components/Boxes.jsx';
 import Link from 'next/link';
 
-export default function GetAnime() {
+export default function SearchAnime() {
   const a = `const { searchAnime } = require(\'anichu.db\');
 
 ( async () => {
