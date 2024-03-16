@@ -27,6 +27,7 @@ export default function SearchAnime() {
 
   return (
     <div>
+    <TitleNavBar />
     <h1 className="ml-4 text-3xl md:text-4xl pt-24 mb-4 font-bold text-black">searchAnime()</h1>
     <hr />
     <p className="ml-5 mr-5 mt-4 text-black mb-4">
