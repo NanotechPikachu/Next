@@ -65,7 +65,7 @@ export default function GetAnime() {
     <br />
     <hr />
     <div className="mt-3 ml-4 mr-4 text-black border-l-2 border-slate-100">
-    <p>This function returns a maximum of 10 entries only so that the output window won’t get clogged.</p>
+    <p className="ml-2">This function returns a maximum of 10 entries only so that the output window won’t get clogged.</p>
     </div> 
     </div>
   )
