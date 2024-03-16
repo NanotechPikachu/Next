@@ -23,7 +23,7 @@ export default function GetAnime() {
 
   return (
     <div>
-    <h1 className="ml-4 text-3xl md:text-4xl pt-24 mb-4 font-bold text-black">get Anime()</h1>
+    <h1 className="ml-4 text-3xl md:text-4xl pt-24 mb-4 font-bold text-black">getAnime()</h1>
     <hr />
     <p className="ml-5 mr-5 mt-4 text-black mb-4">
     This function is used to get a specific anime from the JSON DB which will be supplied as it’s parameter.
@@ -60,7 +60,7 @@ This function returns a <a href="https://developer.mozilla.org/en-US/docs/Web/Ja
     <Note>
 Refer the <Link href="/result" className="text-blue-600 hover:text-blue-700"><u>Result Data</u></Link> to see how the JSON DB output looks like.
     </Note>
-    <NextCard title="Home" link="/" className="mt-20" />
+    <NextCard title="searchAnime()" link="/searchanime" className="mt-20" />
     <PrevCard title="Result Type" link="/result" className="mt-3 mb-10" />
     </div>
   )
