@@ -126,7 +126,7 @@ The promise consists of an <a href="https://developer.mozilla.org/en-US/docs/Web
     <Note>
 This function will return upto 10 Array elements AKA index 0-9. Though it depends on the search parameter as well as the ratio parameter.
     </Note>
-    <NextCard title="Home" link="/" className="mt-20" />
+    <NextCard title="getAnime()" link="/getanime" className="mt-20" />
     <PrevCard title="Get Started" link="/start" className="mt-3 mb-10" />
     </div>
   )
