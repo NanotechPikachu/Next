@@ -67,6 +67,13 @@ export default function GetAnime() {
     <div className="mt-3 ml-4 mr-4 text-black border-l-2 border-slate-100">
     <p className="ml-2">This function returns a maximum of 10 entries only so that the output window won’t get clogged.</p>
     </div> 
+    <Warning title="Asynchronous">
+This function returns a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" className="text-blue-600 hover:text-blue-700"><u>Promise</u></a> with an <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" className="text-blue-600 hover:text-blue-700"><u>Array</u></a> inside it. Each element of the Array is an <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" className="text-blue-600 hover:text-blue-700"><u>Object</u></a> of the data returned by DB.
+    </Warning>
+    <Note>
+Refer the <Link href="/result" className="text-blue-600 hover:text-blue-700"><u>Result Data</u></Link> to see how the JSON DB output looks like.
+    </Note>
+    <PrevCard title="getAnime()" link="/getanime" className="mt-3 mb-10" />
     </div>
   )
 }
