@@ -13,7 +13,7 @@ export default function NavBar() {
   return (
     <div>
       <button
-        className={`fixed z-30 top-6 right-0 m-4 p-2 border-2 ${isOpen ? 'hidden' : 'block'}`}
+        className={`fixed z-30 top-0 right-0 m-4 p-2 border-2 ${isOpen ? 'hidden' : 'block'}`}
         onClick={toggleNavBar}
       >
         Menu
