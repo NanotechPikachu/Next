@@ -31,7 +31,7 @@ export default function NavBar() {
         </button>
         <nav>
           <ul>
-            <li className="my-4">
+            <li className="mt-8">
               <Link href="/">
                 <a onClick={toggleNavBar}>Home</a>
               </Link>
