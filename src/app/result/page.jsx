@@ -4,6 +4,7 @@ import { SyntaxHighlighter as CodeBlock, style } from '../../components/CodeBloc
 import Copy from '../../components/Copy.js';
 import TitleNavBar from '../../components/TitleNavBar.js';
 import { Note } from '../../components/Boxes.jsx';
+import NavBar from '../../components/NavBar.jsx';
 
 export default function Result() {
   const c = `{
@@ -65,7 +66,8 @@ export default function Result() {
 
   return (
     <div>
-    <TitleNavBar />
+   {/* <TitleNavBar /> */}
+    <NavBar />
     <h1 className="ml-4 text-3xl md:text-4xl pt-24 mb-4 font-bold text-black">Result Type</h1>
     <hr />
     <p className="ml-5 mr-5 mt-4 text-black">
