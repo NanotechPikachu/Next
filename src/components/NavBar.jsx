@@ -13,9 +13,9 @@ export default function NavBar() {
   function NavLinks({ links }) {
     return (
       {
-      for (const a of links) {
+      links.map((x) => {
         console.log("hi");
-      };
+      });
       }
     )
   }
