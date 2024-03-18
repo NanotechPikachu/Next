@@ -15,7 +15,7 @@ function NavLinks({ links }) {
     {
     links.map((x) => {
       console.log(x);
-    });
+    })
     }
     </>
   )
