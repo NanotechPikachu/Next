@@ -3,13 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
-const [isOpen, setIsOpen] = useState(false);
-
-function toggleNavBar() {
-  setIsOpen(!isOpen);
-};
-
-function NavLinks({ links }) {
+function NavLinks({ links, toggleNavBar }) {
   return (
     <>
     {
@@ -22,6 +16,11 @@ function NavLinks({ links }) {
 }
 
 export default function NavBar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  function toggleNavBar() {
+  setIsOpen(!isOpen);
+};
 
   return (
     <div>
