@@ -16,7 +16,7 @@ function NavLinks({ links, toggleNavBar, current }) {
     <nav className="mt-12">
     {
     links.map((x) => (
-      <div key={x.title} onClick={() => { page(x.link); toggleNavBar(); }} className="hover:text-sky-400 hover:border hover:border-sky-400 p-2">
+      <div key={x.title} onClick={() => { page(x.link); toggleNavBar(); }} className={`hover:text-sky-400 hover:border hover:border-sky-400 p-2 ${(x.link == current) ? 'bg-sky-400' : ''}`}>
       {x.title}
       </div>
     ))
