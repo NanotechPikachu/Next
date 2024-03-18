@@ -2,14 +2,24 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 function NavLinks({ links, toggleNavBar }) {
+  let navigate = useRouter();
+
+  function page(link) {
+    navigate.push(link);
+  };
+
   return (
     <>
     <nav className="mt-12 ml-1 mr-1">
     {
     links.map((x) => {
       console.log(x);
+<div onClick={() => page(x.link)}>
+{x.title}
+</div>
     })
     }
     </nav>
