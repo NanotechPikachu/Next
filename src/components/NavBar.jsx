@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
- const [isOpen, setIsOpen] = useState(false);
+const [isOpen, setIsOpen] = useState(false);
 
 function toggleNavBar() {
   setIsOpen(!isOpen);
@@ -11,11 +11,13 @@ function toggleNavBar() {
 
 function NavLinks({ links }) {
   return (
+    <>
     {
     links.map((x) => {
       console.log(x);
     });
     }
+    </>
   )
 }
 
