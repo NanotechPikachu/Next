@@ -16,7 +16,7 @@ function NavLinks({ links, toggleNavBar }) {
     <nav className="mt-12 ml-1 mr-1">
     {
     links.map((x) => (
-      <div key={x.title} onClick={() => { page(x.link); toggleNavBar(); }} className="hover:text-sky-400 hover:border hover:border-sky-400">
+      <div key={x.title} onClick={() => { page(x.link); toggleNavBar(); }} className="hover:text-sky-400 hover:border hover:border-sky-400 p-4">
       {x.title}
       </div>
     ))
@@ -33,7 +33,7 @@ export default function NavBar() {
   setIsOpen(!isOpen);
 };
 
-  let links = [{ title: 'Home', link: "/"}]
+  let links = [{ title: 'Home', link: "/" }, { title: 'Get Started' link: "/start" }]
 
   return (
     <div>
