@@ -3,22 +3,23 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
+ const [isOpen, setIsOpen] = useState(false);
+
+function toggleNavBar() {
+  setIsOpen(!isOpen);
+};
+
+function NavLinks({ links }) {
+  return (
+    {
+    links.map((x) => {
+      console.log(x);
+    });
+    }
+  )
+}
+
 export default function NavBar() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  function toggleNavBar() {
-    setIsOpen(!isOpen);
-  };
-
-  function NavLinks({ links }) {
-    return (
-      {
-      links.map((x) => {
-        console.log("hi");
-      });
-      }
-    )
-  }
 
   return (
     <div>
@@ -74,4 +75,6 @@ export default function NavBar() {
     </div>
   );
 };
+
+
 
