@@ -33,7 +33,7 @@ export default function NavBar() {
   setIsOpen(!isOpen);
 };
 
-  let links = [{ title: 'Home', link: "/" }, { title: 'Get Started' link: "/start" }]
+  let links = [{ title: 'Home', link: "/" }, { title: 'Get Started', link: "/start" }]
 
   return (
     <div>
