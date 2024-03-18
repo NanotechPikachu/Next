@@ -33,7 +33,13 @@ export default function NavBar() {
   setIsOpen(!isOpen);
 };
 
-  let links = [{ title: 'Home', link: "/" }, { title: 'Get Started', link: "/start" }]
+  let links = [
+{ title: 'Home', link: "/" },
+{ title: 'Get Started', link: "/start" },
+{ title: 'Result Type', link: "/result" },
+{ title: 'GetAnime Function', link: "/getanime" },
+{ title: 'SearchAnime Function', link: "/searchanime" }
+];
 
   return (
     <div>
@@ -57,7 +63,7 @@ export default function NavBar() {
 */}
     </div>
     <div
-        className={`fixed z-30 top-0 right-0 w-1/2 h-full bg-gray-100 p-4 transform ${
+        className={`fixed z-30 top-0 right-0 w-full h-full bg-gray-100 p-4 transform ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         } transition-transform duration-500 ease-in-out md:w-1/3`}
       >
