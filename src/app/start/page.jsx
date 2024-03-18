@@ -1,12 +1,12 @@
 import Terminal from '../../components/Terminal.jsx';
 import Code from '../../components/Code.js';
 import { NextCard, PrevCard } from '../../components/PageCards.js';
-import TitleNavBar from '../../components/TitleNavBar.js';
+import NavBar from '../../components/NavBar.jsx';
 
 export default function Start() {
   return (
     <div>
-    <TitleNavBar />
+    <NavBar current="/start" />
     <h1 className="ml-4 text-3xl md:text-4xl pt-24 mb-4 font-bold text-black">Get Started</h1>
     <hr />
     <h2 className="ml-5 mr-5 text-2xl mt-4 font-bold text-black">Installation</h2>
