@@ -6,11 +6,13 @@ import Link from 'next/link';
 function NavLinks({ links, toggleNavBar }) {
   return (
     <>
+    <nav className="mt-12 ml-1 mr-1">
     {
     links.map((x) => {
       console.log(x);
     })
     }
+    </nav>
     </>
   )
 }
