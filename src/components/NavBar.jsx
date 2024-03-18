@@ -16,7 +16,7 @@ function NavLinks({ links, toggleNavBar }) {
     <nav className="mt-12 ml-1 mr-1">
     {
     links.map((x) => (
-      <div onClick={() => page(x.link)}>
+      <div key={x.title} onClick={() => { page(x.link); toggleNavBar(); }}>
       {x.title}
       </div>
     ))
