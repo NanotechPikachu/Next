@@ -15,12 +15,11 @@ function NavLinks({ links, toggleNavBar }) {
     <>
     <nav className="mt-12 ml-1 mr-1">
     {
-    links.map((x) => {
-      console.log(x);
-<div onClick={() => page(x.link)}>
-{x.title}
-</div>
-    })
+    links.map((x) => (
+      <div onClick={() => page(x.link)}>
+      {x.title}
+      </div>
+    ))
     }
     </nav>
     </>
@@ -33,6 +32,8 @@ export default function NavBar() {
   function toggleNavBar() {
   setIsOpen(!isOpen);
 };
+
+  let links = [{ title: 'Home', link: "/"}]
 
   return (
     <div>
@@ -73,7 +74,7 @@ export default function NavBar() {
         >
           Close
         </button>
-*/}
+
     <nav>
     <ul>
     <li className="mt-12">
@@ -81,9 +82,11 @@ export default function NavBar() {
     <a onClick={toggleNavBar}>Home</a>
     </Link>
     </li>
-            {/* Add more links here */}
+           
     </ul>
     </nav>
+*/ }
+    <NavLinks links={links} toggleNavBar={toggleNavBar} />
     </div>
     </div>
   );
