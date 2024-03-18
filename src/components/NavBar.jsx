@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
-function NavLinks({ links, toggleNavBar }) {
+function NavLinks({ links, toggleNavBar, current }) {
   let navigate = useRouter();
 
   function page(link) {
@@ -26,7 +26,7 @@ function NavLinks({ links, toggleNavBar }) {
   )
 }
 
-export default function NavBar() {
+export default function NavBar({ current }) {
   const [isOpen, setIsOpen] = useState(false);
 
   function toggleNavBar() {
@@ -92,7 +92,7 @@ export default function NavBar() {
     </ul>
     </nav>
 */ }
-    <NavLinks links={links} toggleNavBar={toggleNavBar} />
+    <NavLinks links={links} toggleNavBar={toggleNavBar} current={current} />
     </div>
     </div>
   );
