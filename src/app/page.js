@@ -16,13 +16,13 @@ export default function Page() {
     <div>
       <TitleNavBar />
       <div className="flex flex-col md:pl-10">
-        <div className="pt-24 pb-4 text-center md:ml-4 md:text-left">
+        <div className="pt-24 pb-4 text-center md:ml-4">
           <h1 className="font-bold text-zinc-800 hover:text-zinc-700 text-3xl md:text-4xl">AniChu.DB</h1>
-          <p className="font-sans text-grey-50 md:text-xl">A JSON DataBase of anime info!</p>
+          <p className="font-sans text-grey-50 md:text-xl text-center">A JSON DataBase of anime info!</p>
         </div>
-        <div className="flex md:justify-start md:items-center md:w-auto ml-6">
+        <div className="flex justify-between items-center md:w-auto ml-6 mr-6">
           <button 
-          className="bg-blue-500 hover:bg-blue-400 text-white mt-10 rounded-full text-center py-2 px-4 mr-[70px] md:mr-8"
+          className="bg-blue-500 hover:bg-blue-400 text-white mt-10 rounded-full text-center py-2 px-4"
          onClick={pageFlip} 
           >
           Get started
