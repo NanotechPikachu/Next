@@ -4,6 +4,8 @@ import Card from '../components/Card.js';
 import TitleNavBar from '../components/TitleNavBar.js';
 import GitButton from '../components/GitButton.js';
 import { useRouter } from 'next/navigation';
+import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
 
 export default function Page() {
   let navigate = useRouter();
@@ -11,6 +13,10 @@ export default function Page() {
   function pageFlip() {
     navigate.push('/start');
   };
+
+const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => setMounted(true), [])
 
   return (
     <div>
@@ -38,6 +44,16 @@ export default function Page() {
         <Card title="Tested" className="mt-4" icon={true}>
           <p> The package&apos;s been tested to make sure that errors in JSON are minimized. </p>
         </Card>
+<h1>next-themes Example</h1>
+      <select value={theme} onChange={e => setTheme(e.target.value)} data-test-id="theme-selector">
+        <option value="system">System</option>
+        {mounted && (
+          <>
+            <option value="dark">Dark</option>
+            <option value="light">Light</option>
+          </>
+        )}
+      </select>
       </div>
     </div>
   )
