@@ -1,5 +1,13 @@
-// app/api/proxy/route.js
 import { NextResponse } from "next/server";
+
+// Helper to resolve relative URLs in playlists
+function resolveUrl(base, relative) {
+  try {
+    return new URL(relative, base).href;
+  } catch {
+    return relative; // fallback
+  }
+}
 
 export async function GET(req) {
   const { searchParams } = new URL(req.url);
@@ -9,42 +17,62 @@ export async function GET(req) {
     return new NextResponse("Missing 'url' query parameter", { status: 400 });
   }
 
+  // Prevent infinite proxy loops
+  if (targetUrl.includes('/api/proxy')) {
+    return new NextResponse("Refusing to proxy our own endpoint.", { status: 400 });
+  }
+
   try {
-    // Fetch the M3U8 file
     const response = await fetch(targetUrl);
 
     if (!response.ok) {
-      return new NextResponse("Failed to fetch playlist", { status: response.status });
+      return new NextResponse("Failed to fetch resource", { status: response.status });
     }
 
-    let playlistContent = await response.text();
+    // Handle M3U8 playlist files
+    if (targetUrl.endsWith(".m3u8")) {
+      let playlistContent = await response.text();
 
-    // Fix: Properly rewrite segment and key URLs without introducing extra quotes or slashes
-
-    // Replace EXT-X-KEY URI (handles both quoted and unquoted)
-    playlistContent = playlistContent.replace(
-      /(#EXT-X-KEY:.*URI=)(\"?)(https?:\/\/[^",\s]+)(\"?)/g,
-      (match, p1, p2, url, p4) => {
-        return `${p1}${p2}/api/proxy?url=${encodeURIComponent(url)}${p4}`;
-      }
-    );
-    // Replace segment/fragment URLs (these are lines not starting with # and are absolute URLs)
-    playlistContent = playlistContent.replace(
-      /^((?!#)[\w\d:/\-.?&=%]+)/gm,
-      (line) => {
-        if (/^https?:\/\//.test(line)) {
-          return `/api/proxy?url=${encodeURIComponent(line)}`;
+      // Rewrite EXT-X-KEY absolute URIs
+      playlistContent = playlistContent.replace(
+        /(#EXT-X-KEY:.*URI=)(\"?)(https?:\/\/[^",\s]+)(\"?)/g,
+        (match, p1, p2, url, p4) => {
+          return `${p1}${p2}/api/proxy?url=${encodeURIComponent(url)}${p4}`;
         }
-        return line; // keep relative URLs untouched (or proxy them if you want)
-      }
-    );
+      );
 
-    return new NextResponse(playlistContent, {
-      headers: {
-        "Content-Type": "application/vnd.apple.mpegurl",
-        "Access-Control-Allow-Origin": "*",
-      },
-    });
+      // Rewrite segment URLs (absolute or relative, non-comment lines)
+      playlistContent = playlistContent.replace(
+        /^((?!#)[^\r\n]+)/gm,
+        (line) => {
+          let trimmed = line.trim();
+          if (!trimmed) return line;
+          if (/^https?:\/\//.test(trimmed)) {
+            // Absolute URL
+            return `/api/proxy?url=${encodeURIComponent(trimmed)}`;
+          }
+          // Relative URL
+          const absUrl = resolveUrl(targetUrl, trimmed);
+          return `/api/proxy?url=${encodeURIComponent(absUrl)}`;
+        }
+      );
+
+      return new NextResponse(playlistContent, {
+        headers: {
+          "Content-Type": "application/vnd.apple.mpegurl",
+          "Access-Control-Allow-Origin": "*",
+        },
+      });
+    } else {
+      // Proxy binary files (segments, keys, etc)
+      const arrayBuffer = await response.arrayBuffer();
+      return new NextResponse(arrayBuffer, {
+        headers: {
+          "Content-Type": response.headers.get("content-type") || "application/octet-stream",
+          "Access-Control-Allow-Origin": "*",
+        },
+      });
+    }
   } catch (error) {
     console.error("Proxy error:", error);
     return new NextResponse("Internal Server Error", { status: 500 });
