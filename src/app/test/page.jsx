@@ -58,17 +58,7 @@ export default function VideoPlayer() {
 
       {/* Video Player */}
      
-        <MediaPlayer
-          src={proxyUrl} // Use the proxied URL as the video source
-          controls
-          autoplay
-          style={{
-            width: "100%",
-            height: "auto",
-            marginTop: "20px",
-          }}
-        />
-           <MediaPlayer title="Anime" src={currentStream}>
+           <MediaPlayer title="Anime" src={proxyUrl}>
         <MediaProvider />
         <DefaultVideoLayout icons={defaultLayoutIcons} />
       </MediaPlayer>
