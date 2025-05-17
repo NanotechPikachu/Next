@@ -1,7 +1,13 @@
 "use client";
 
-import { MediaPlayer } from "@vidstack/react";
 import { useState } from "react";
+import "@vidstack/react/player/styles/default/theme.css";
+import "@vidstack/react/player/styles/default/layouts/video.css";
+import { MediaPlayer, MediaProvider } from "@vidstack/react";
+import {
+  defaultLayoutIcons,
+  DefaultVideoLayout,
+} from "@vidstack/react/player/layouts/default";
 
 export default function VideoPlayer() {
   const [m3u8Url, setM3u8Url] = useState(""); // State to store the input URL
@@ -51,7 +57,7 @@ export default function VideoPlayer() {
       </button>
 
       {/* Video Player */}
-      {proxyUrl && (
+     
         <MediaPlayer
           src={proxyUrl} // Use the proxied URL as the video source
           controls
@@ -62,7 +68,10 @@ export default function VideoPlayer() {
             marginTop: "20px",
           }}
         />
-      )}
+           <MediaPlayer title="Anime" src={currentStream}>
+        <MediaProvider />
+        <DefaultVideoLayout icons={defaultLayoutIcons} />
+      </MediaPlayer>
     </div>
   );
 }
