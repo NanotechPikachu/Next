@@ -72,3 +72,4 @@ const url = 'https://vault-12.kwik.cx/mp4/12/09/949d262c0a4c08f7420ec823a4fc2d8f
 return (
 <video src={url} width={100} height={70} />
 )
+}
