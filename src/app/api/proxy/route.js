@@ -20,9 +20,18 @@ export async function GET(req) {
     let playlistContent = await response.text();
 
     // Rewrite segment URLs to go through the proxy
-    playlistContent = playlistContent.replace(/(https?:\/\/[^\s]+)/g, (match) => {
-      return `/api/proxy?url=${encodeURIComponent(match)}`;
-    });
+    playlistContent = playlistContent
+  // Replace EXT-X-KEY URI (handles both quoted and unquoted)
+  .replace(/(#EXT-X-KEY:.*URI=)(\"?)(https?:\/\/[^",\s]+)(\"?)/g, (match, p1, p2, url, p4) => {
+    return `${p1}${p2}/api/proxy?url=${encodeURIComponent(url)}${p4}`;
+  })
+  // Replace segment/fragment URLs (these are the lines not starting with #)
+  .replace(/^((?!#)[\w\d:/\-.?&=%]+)/gm, (line) => {
+    if (/^https?:\/\//.test(line)) {
+      return `/api/proxy?url=${encodeURIComponent(line)}`;
+    }
+    return line; // leave relative URLs as-is, or proxy them if you want
+  });
 
     return new NextResponse(playlistContent, {
       headers: {
