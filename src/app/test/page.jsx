@@ -12,13 +12,13 @@ import {
 export default function VideoPlayer() {
   const [m3u8Url, setM3u8Url] = useState(""); // State to store the input URL
   const [proxyUrl, setProxyUrl] = useState(""); // State to store the proxy URL for playback
-
+*/
   const handlePlay = () => {
     if (!m3u8Url) {
       alert("Please enter a valid M3U8 URL!");
       return;
     }
-
+/*
     // Generate the proxy URL dynamically
     const generatedProxyUrl = `/api/proxy?url=${encodeURIComponent(m3u8Url)}`;
     setProxyUrl(generatedProxyUrl);
@@ -27,7 +27,7 @@ export default function VideoPlayer() {
   return (
     <div>
       <h1>Video Player</h1>
-
+*/ /*
       {/* Input Field for User to Enter M3U8 URL */}
       <input
         type="text"
@@ -40,7 +40,7 @@ export default function VideoPlayer() {
           marginBottom: "10px",
         }}
       />
-
+*/ /*
       {/* Button to Load Video */}
       <button
         onClick={handlePlay}
