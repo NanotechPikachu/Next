@@ -19,19 +19,25 @@ export async function GET(req) {
 
     let playlistContent = await response.text();
 
-    // Rewrite segment URLs to go through the proxy
-    playlistContent = playlistContent
-  // Replace EXT-X-KEY URI (handles both quoted and unquoted)
-  .replace(/(#EXT-X-KEY:.*URI=)(\"?)(https?:\/\/[^",\s]+)(\"?)/g, (match, p1, p2, url, p4) => {
-    return `${p1}${p2}/api/proxy?url=${encodeURIComponent(url)}${p4}`;
-  })
-  // Replace segment/fragment URLs (these are the lines not starting with #)
-  .replace(/^((?!#)[\w\d:/\-.?&=%]+)/gm, (line) => {
-    if (/^https?:\/\//.test(line)) {
-      return `/api/proxy?url=${encodeURIComponent(line)}`;
-    }
-    return line; // leave relative URLs as-is, or proxy them if you want
-  });
+    // Fix: Properly rewrite segment and key URLs without introducing extra quotes or slashes
+
+    // Replace EXT-X-KEY URI (handles both quoted and unquoted)
+    playlistContent = playlistContent.replace(
+      /(#EXT-X-KEY:.*URI=)(\"?)(https?:\/\/[^",\s]+)(\"?)/g,
+      (match, p1, p2, url, p4) => {
+        return `${p1}${p2}/api/proxy?url=${encodeURIComponent(url)}${p4}`;
+      }
+    );
+    // Replace segment/fragment URLs (these are lines not starting with # and are absolute URLs)
+    playlistContent = playlistContent.replace(
+      /^((?!#)[\w\d:/\-.?&=%]+)/gm,
+      (line) => {
+        if (/^https?:\/\//.test(line)) {
+          return `/api/proxy?url=${encodeURIComponent(line)}`;
+        }
+        return line; // keep relative URLs untouched (or proxy them if you want)
+      }
+    );
 
     return new NextResponse(playlistContent, {
       headers: {
